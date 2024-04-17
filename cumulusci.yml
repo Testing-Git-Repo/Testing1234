@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: Testing1234
+    package:
+        name: Testing1234
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Testing1234/tests
+            options:
+                outputdir: robot/Testing1234/results
+
+    robot_testdoc:
+        options:
+            path: robot/Testing1234/tests
+            output: robot/Testing1234/doc/Testing1234_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
